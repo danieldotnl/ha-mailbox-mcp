@@ -7,7 +7,9 @@ LABEL \
     io.hass.type="addon" \
     io.hass.arch="${BUILD_ARCH}"
 
+# renovate: datasource=npm depName=mailbox-mcp
 ARG MAILBOX_MCP_VERSION=0.13.1
+# renovate: datasource=npm depName=supergateway
 ARG SUPERGATEWAY_VERSION=4.2.1
 
 RUN apk add --no-cache su-exec

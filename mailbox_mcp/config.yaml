@@ -1,7 +1,7 @@
 name: Mailbox MCP
 version: "0.1.0"
 slug: mailbox_mcp
-description: IMAP mailbox as a remote MCP connector for Claude, drafts only
+description: IMAP mailbox as a remote MCP server for AI assistants, drafts only
 url: https://github.com/danieldotnl/ha-mailbox-mcp
 arch:
   - amd64

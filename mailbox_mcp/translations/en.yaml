@@ -1,7 +1,7 @@
 configuration:
   account_alias:
     name: Account alias
-    description: Name Claude uses for this mailbox (letters, digits, - and _).
+    description: Name the assistant uses for this mailbox (letters, digits, - and _).
   email:
     name: Email address
     description: Also used as the IMAP username.
