@@ -1,0 +1,27 @@
+name: Mailbox MCP
+version: "0.1.0"
+slug: mailbox_mcp
+description: IMAP mailbox as a remote MCP connector for Claude, drafts only
+url: https://github.com/danieldotnl/ha-mailbox-mcp
+arch:
+  - amd64
+init: false
+# No published port and no login of its own: cloudflared reaches the server on
+# the internal add-on network (http://<repo>-mailbox-mcp:8080), and Cloudflare
+# Access (Managed OAuth) handles the login in front of the tunnel.
+options:
+  account_alias: newsletter
+  email: ""
+  imap_password: ""
+  imap_host: imap.mailbox.org
+  imap_port: 993
+  smtp_host: smtp.mailbox.org
+  smtp_port: 465
+schema:
+  account_alias: match(^[a-zA-Z0-9_-]+$)
+  email: email
+  imap_password: password
+  imap_host: str
+  imap_port: port
+  smtp_host: str
+  smtp_port: port

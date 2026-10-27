@@ -1,0 +1,19 @@
+configuration:
+  account_alias:
+    name: Account alias
+    description: Name Claude uses for this mailbox (letters, digits, - and _).
+  email:
+    name: Email address
+    description: Also used as the IMAP username.
+  imap_password:
+    name: App password
+    description: An app password with IMAP rights only. Without SMTP rights, sending is impossible even if every other guard failed.
+  imap_host:
+    name: IMAP host
+  imap_port:
+    name: IMAP port
+  smtp_host:
+    name: SMTP host
+    description: Required by mailbox-mcp, but never used; sending is disabled.
+  smtp_port:
+    name: SMTP port
