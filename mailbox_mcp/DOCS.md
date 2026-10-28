@@ -25,12 +25,13 @@ Create an app password with **IMAP rights only**, so sending is impossible at th
 | Option | Description |
 |---|---|
 | `account_alias` | The name the assistant uses for this mailbox |
-| `email` | The address, also used as IMAP username |
+| `email` | The address of the mailbox |
+| `username` | Optional IMAP login, if it differs from `email`. On mailbox.org this is the account's main address |
 | `imap_password` | The app password |
 | `imap_host`, `imap_port` | Defaults to mailbox.org |
 | `smtp_host`, `smtp_port` | Required by mailbox-mcp but never used |
 
-Start the app. The log should end with `Listening on port 8080`.
+Start the app. The log should end with `Starting on port 8080; only errors are logged from here on.` Requests and mail content are never logged.
 
 ### 3. Cloudflare tunnel
 

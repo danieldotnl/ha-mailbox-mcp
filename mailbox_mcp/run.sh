@@ -14,10 +14,15 @@ export MAILBOX_MCP_LOG_DIR=/data/mailbox-logs
 export MAILBOX_MCP_PROFILE=draft
 export MAILBOX_MCP_TOOLS=core,organize,bulk
 
+echo "Starting on port 8080; only errors are logged from here on."
+# supergateway logs every MCP message (mail content included) at info level,
+# which goes to stdout; errors, including mailbox-mcp's own stderr, go to
+# stderr. It has no level in between, so drop stdout and keep stderr.
 exec su-exec node:node supergateway \
     --stdio mailbox-mcp \
     --outputTransport streamableHttp \
     --stateful \
     --sessionTimeout 3600000 \
     --port 8080 \
-    --healthEndpoint /healthz
+    --healthEndpoint /healthz \
+    > /dev/null

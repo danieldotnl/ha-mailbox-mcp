@@ -63,7 +63,7 @@ chownSync(accountsPath, 0, 0);
 chmodSync(accountsPath, 0o644);
 
 // Rewritten every start, so a changed password in the options takes effect.
-encryptCredentials(CONFIG_DIR, alias, { username: options.email, password: options.imap_password }, passphrase);
+encryptCredentials(CONFIG_DIR, alias, { username: options.username || options.email, password: options.imap_password }, passphrase);
 const accountDir = join(CONFIG_DIR, "accounts", alias);
 chownSync(join(CONFIG_DIR, "accounts"), NODE_UID, NODE_GID);
 chownSync(accountDir, NODE_UID, NODE_GID);

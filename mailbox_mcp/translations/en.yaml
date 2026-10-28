@@ -4,7 +4,10 @@ configuration:
     description: Name the assistant uses for this mailbox (letters, digits, - and _).
   email:
     name: Email address
-    description: Also used as the IMAP username.
+    description: Used as the IMAP username unless Username is set.
+  username:
+    name: Username
+    description: IMAP login, if it differs from the email address (on mailbox.org, the account's main address).
   imap_password:
     name: App password
     description: An app password with IMAP rights only. Without SMTP rights, sending is impossible even if every other guard failed.

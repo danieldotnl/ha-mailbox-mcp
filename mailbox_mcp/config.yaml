@@ -1,5 +1,5 @@
 name: Mailbox MCP
-version: "0.1.0"
+version: "0.1.1"
 slug: mailbox_mcp
 description: IMAP mailbox as a remote MCP server for AI assistants, drafts only
 url: https://github.com/danieldotnl/ha-mailbox-mcp
@@ -20,6 +20,8 @@ options:
 schema:
   account_alias: match(^[a-zA-Z0-9_-]+$)
   email: email
+  # Optional: omitted from options so it can stay empty.
+  username: str?
   imap_password: password
   imap_host: str
   imap_port: port
